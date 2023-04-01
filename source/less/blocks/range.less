@@ -1,0 +1,29 @@
+.range {
+  padding: 11px 0;
+}
+
+.range__bar {
+  position: relative;
+  background-color: @color-light-gray;
+  height: 2px;
+}
+
+.range__scale {
+  margin: 0 10px;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  background-color: @color-primary-lighter;
+  display: flex;
+  justify-content: space-between;
+}
+
+.range__toggler {
+  margin: -10px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid @color-primary-lighter;
+  background-color: @color-base-white;
+  border-radius: 50%;
+  cursor: pointer;
+}

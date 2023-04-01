@@ -1,0 +1,113 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  padding-bottom: 38px;
+
+  @media (min-width: @width-tablet) and (max-width: @width-tablet-only) {
+    display: grid;
+    gap: 40px 27px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: @width-desktop) {
+    padding: 0;
+    padding-top: 10px;
+  }
+}
+
+.filter__fieldset {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  gap: 20px;
+}
+
+.filter__inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 44px;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: @color-base-gray;
+    width: 8px;
+    height: 2px;
+    left: calc(50% - 4px);
+    right: calc(50% - 4px);
+    top: calc(50% - 1px);
+    bottom: calc(50% - 1px);
+  }
+}
+
+.filter__legend {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 19px;
+}
+
+.filter__input {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+  border: 2px solid @color-base-primary;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+
+  &:focus {
+    border-color: @color-primary-darker;
+    outline: none;
+  }
+  &:disabled {
+    border-color: @color-light-gray;
+  }
+  &::placeholder {
+    color: @color-base-gray;
+  }
+}
+
+.filter__range {
+  @media (max-width: @width-mobile-only) {
+    margin-bottom: 6px;
+  }
+}
+
+.filter__label {
+  position: relative;
+  &--hidden {
+    flex-grow: 1;
+  }
+}
+
+.filter__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: @width-tablet) {
+    flex-direction: row;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-content: center;
+  }
+
+  @media (min-width: @width-desktop) {
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+}
+
+.filter__button {
+  @media (min-width: @width-desktop) {
+    min-width: 150px;
+  }
+}

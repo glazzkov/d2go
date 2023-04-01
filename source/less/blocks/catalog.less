@@ -1,0 +1,59 @@
+.catalog {
+  background-color: @color-lightest-gray;
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+  @media (min-width: @width-tablet) {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+  @media (min-width: @width-desktop) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.catalog__wrapper {
+  @media (min-width: @width-desktop) {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "header header      header      header"
+      "filter sort        sort        sort"
+      "filter products    products    products"
+      ".      pagination  pagination  pagination";
+  }
+}
+
+.catalog__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  grid-area: header;
+  @media (min-width: @width-desktop) {
+    margin: 0;
+  }
+}
+
+.catalog__filter {
+  grid-area: filter;
+}
+
+.catalog__sort {
+  grid-area: sort;
+}
+
+.catalog__products {
+  grid-area: products;
+  @media (min-width: @width-desktop) {
+    margin-top: -5px;
+  }
+}
+
+.catalog__pagination {
+  grid-area: pagination;
+}

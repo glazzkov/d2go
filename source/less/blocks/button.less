@@ -1,0 +1,39 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  background-color: @color-base-primary;
+  color: @color-base-white;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  &--light {
+    background-color: @color-base-white;
+    color: @color-base-primary;
+  }
+
+  &:focus,
+  &:hover:not(:disabled) {
+    background-color: @color-primary-lighter;
+    color: @color-base-white;
+  }
+
+  &:active:not(:disabled) {
+    background-color: @color-primary-darker;
+    color: @color-base-white;
+  }
+  &:disabled {
+    background-color: @color-base-gray;
+    color: @color-base-white;
+  }
+
+  &--light:disabled {
+    background-color: @color-light-gray;
+  }
+}

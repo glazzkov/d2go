@@ -1,0 +1,19 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 13px;
+  padding-bottom: 40px;
+  @media (min-width: @width-tablet) {
+    padding-top: 27px;
+    padding-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media (min-width: @width-desktop) {
+    padding: 0;
+    padding-bottom: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,13 @@
+.container {
+  min-width: 320px;
+  max-width: @width-mobile-only;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media (max-width: @width-tablet-only) {
+    max-width: @width-tablet-only;
+  }
+  @media (min-width: @width-desktop) {
+    max-width: @width-desktop;
+    padding: 0 40px;
+  }
+}

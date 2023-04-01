@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @media (min-width: @width-tablet) {
+    justify-content: flex-end;
+  }
+}
+
+.pagination__span {
+  @media (max-width: @width-mobile-only) {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+  padding: 0 12px;
+}
+
+.pagination__link {
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+  min-width: 40px;
+  min-height: 40px;
+
+  &.active {
+    background-color: inherit;
+    font-weight: 600;
+    color: inherit;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+}
+
+.pagination__icon {
+  @media (min-width: @width-tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,103 @@
+.slider__button {
+  position: absolute;
+  background-color: inherit;
+  color: @color-base-primary;
+  border: none;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  @media (min-width: @width-tablet) {
+    width: 80px;
+  }
+  @media (min-width: @width-tablet) and (max-width: @width-tablet-only) {
+    bottom: 192px;
+  }
+  &--left {
+    left: 0;
+    @media (min-width: @width-desktop) {
+      left: calc((100% - @width-desktop) / 2);
+    }
+    &:hover:not([disabled]),
+    &:focus {
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    &:active:not([disabled]) {
+      background: linear-gradient(
+        90deg,
+        rgba(120, 89, 207, 0.25) 0%,
+        rgba(120, 89, 207, 0) 100%
+      );
+    }
+  }
+  &--right {
+    right: 0;
+    @media (min-width: @width-desktop) {
+      right: calc((100% - @width-desktop) / 2);
+    }
+    &:hover:not(:disabled),
+    &:focus {
+      background: linear-gradient(
+        -90deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+    &:active:not(:disabled) {
+      background: linear-gradient(
+        -90deg,
+        rgba(120, 89, 207, 0.25) 0%,
+        rgba(120, 89, 207, 0) 100%
+      );
+    }
+  }
+  &:disabled {
+    color: @color-base-gray;
+  }
+}
+
+.slider__paginagion {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  bottom: 70px;
+  left: calc((80% - @width-desktop) / 2);
+  right: calc((80% - @width-desktop) / 2);
+  @media (max-width: @width-tablet-only) {
+    display: none;
+  }
+}
+
+.slider__pagination-button {
+  position: relative;
+  width: 62px;
+  height: 4px;
+  border: 0;
+  background-color: @color-base-white;
+  &:hover,
+  &:focus {
+    background-color: @color-primary-opacity;
+  }
+  &:active {
+    background-color: @color-base-primary;
+  }
+  &.active {
+    background-color: @color-base-primary;
+  }
+  &::after {
+    // псевдоэлемент для более удобного попадания по кнопке курсором
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -30px;
+    bottom: -30px;
+  }
+}

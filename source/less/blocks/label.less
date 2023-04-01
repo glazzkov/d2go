@@ -1,0 +1,157 @@
+.label__span {
+  display: grid;
+  justify-content: start;
+  grid-template-areas: "input text";
+  gap: 13px;
+  @media (min-width: @width-desktop) {
+    gap: 10px;
+  }
+}
+
+.label__radio {
+  & ~ .label__span {
+    &::before {
+      content: "";
+      align-self: center;
+      justify-self: center;
+      grid-area: input;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid @color-base-gray;
+      border-radius: 50%;
+    }
+    &::after {
+      content: "";
+      align-self: center;
+      justify-self: center;
+      grid-area: input;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover:not(:disabled),
+  &:focus {
+    & ~ .label__span {
+      &::before {
+        border-color: @color-primary-lighter;
+      }
+      &::after {
+        background-color: @color-primary-opacity;
+      }
+    }
+  }
+  &:focus {
+    & ~ .label__span {
+      // дополнительная обводка для элемента при фокусе, т.к. при навигации с клавиатуры фокус не видно
+      outline: 1px solid @color-primary-opacity;
+    }
+  }
+
+  &:checked {
+    & ~ .label__span {
+      &::before {
+        border-color: @color-base-primary;
+      }
+      &::after {
+        background-color: @color-base-primary;
+      }
+    }
+    &:disabled {
+      & ~ .label__span {
+        &::after {
+          background-color: @color-light-gray;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    & ~ .label__span {
+      &::before {
+        border-color: @color-light-gray;
+      }
+      &::after {
+        background-color: inherit;
+      }
+      color: @color-light-gray;
+    }
+  }
+}
+
+.label__checkbox {
+  & ~ .label__span {
+    &::before {
+      content: "";
+      align-self: center;
+      justify-self: center;
+      grid-area: input;
+      display: block;
+      width: 42px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: @color-base-gray;
+    }
+    &::after {
+      content: "";
+      align-self: center;
+      justify-self: start;
+      grid-area: input;
+      width: 20px;
+      height: 20px;
+      margin: 2px;
+      border-radius: 50%;
+      background-color: @color-base-white;
+    }
+  }
+
+  &:hover:not(:disabled),
+  &:focus {
+    & ~ .label__span {
+      &::before {
+        border: 2px solid @color-primary-lighter;
+        background-color: @color-primary-opacity;
+      }
+    }
+  }
+  &:focus {
+    & ~ .label__span {
+      // дополнительная обводка для элемента при фокусе, т.к. при навигации с клавиатуры фокус не видно
+      outline: 1px solid @color-primary-opacity;
+    }
+  }
+
+  &:checked {
+    & ~ .label__span {
+      &::before {
+        border: none;
+        background-color: @color-base-primary;
+      }
+      &::after {
+        justify-self: end;
+      }
+    }
+    &:disabled {
+      & ~ .label__span {
+        &::after {
+          background-color: @color-base-gray;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    & ~ .label__span {
+      &::before {
+        border-color: @color-light-gray;
+        background-color: @color-light-gray;
+      }
+      &::after {
+        background-color: @color-base-white;
+      }
+      color: @color-light-gray;
+    }
+  }
+}

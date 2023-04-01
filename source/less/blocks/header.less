@@ -1,0 +1,131 @@
+.header {
+  background-color: @color-base-white;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.header__wrapper {
+  @media (max-width: @width-mobile-only) {
+    display: grid;
+    grid-template-areas:
+      "s e"
+      "c c";
+  }
+  @media (min-width: @width-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: @width-tablet-only;
+  }
+  @media (min-width: @width-desktop) {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: @width-desktop;
+  }
+}
+
+.header__start {
+  grid-area: s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  @media (max-width: @width-mobile-only) {
+    padding: 0 20px;
+  }
+}
+
+.header__center {
+  @media (min-width: @width-tablet) and (max-width: @width-tablet-only) {
+    margin-left: 8px;
+  }
+
+  grid-area: c;
+}
+
+.header__end {
+  grid-area: e;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @media (min-width: @width-desktop) {
+    gap: 20px;
+  }
+}
+
+.header__link {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @media (min-width: @width-desktop) {
+    padding: 32px 20px;
+  }
+  &:active {
+    background-color: @color-base-secondary;
+  }
+
+  @media (min-width: @width-tablet) {
+    &:hover {
+      color: @color-base-primary;
+    }
+  }
+}
+
+.header__span {
+  @media (max-width: @width-tablet-only) {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+}
+
+.header__title {
+  @media (max-width: @width-tablet-only) {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.header__button {
+  background-color: inherit;
+  border: none;
+  display: block;
+  padding: 30px;
+  background-image: url("../../img/mobile-menu-open.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &:active {
+    background-color: @color-base-secondary;
+  }
+  &.open {
+    background-image: url("../../img/mobile-menu-close.svg");
+  }
+
+  &.no-js {
+    display: none;
+  }
+
+  @media (min-width: @width-tablet) {
+    display: none;
+  }
+}

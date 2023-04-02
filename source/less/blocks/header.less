@@ -14,6 +14,7 @@
       "s e"
       "c c";
   }
+
   @media (min-width: @width-tablet) {
     display: flex;
     justify-content: space-between;
@@ -22,6 +23,7 @@
     padding: 0 20px;
     max-width: @width-tablet-only;
   }
+
   @media (min-width: @width-desktop) {
     margin: 0 auto;
     padding: 0 40px;
@@ -34,6 +36,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
   @media (max-width: @width-mobile-only) {
     padding: 0 20px;
   }
@@ -58,6 +61,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
   @media (min-width: @width-desktop) {
     gap: 20px;
   }
@@ -68,9 +72,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
   @media (min-width: @width-desktop) {
     padding: 32px 20px;
   }
+
   &:active {
     background-color: @color-base-secondary;
   }
@@ -117,6 +123,7 @@
   &:active {
     background-color: @color-base-secondary;
   }
+
   &.open {
     background-image: url("../../img/mobile-menu-close.svg");
   }

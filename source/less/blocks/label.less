@@ -3,6 +3,7 @@
   justify-content: start;
   grid-template-areas: "input text";
   gap: 13px;
+
   @media (min-width: @width-desktop) {
     gap: 10px;
   }
@@ -21,6 +22,7 @@
       border: 2px solid @color-base-gray;
       border-radius: 50%;
     }
+
     &::after {
       content: "";
       align-self: center;
@@ -34,15 +36,15 @@
 
   &:hover:not(:disabled),
   &:focus {
-    & ~ .label__span {
-      &::before {
-        border-color: @color-primary-lighter;
-      }
-      &::after {
-        background-color: @color-primary-opacity;
-      }
+    & ~ .label__span::before {
+      border-color: @color-primary-lighter;
+    }
+
+    & ~ .label__span::after {
+      background-color: @color-primary-opacity;
     }
   }
+
   &:focus {
     & ~ .label__span {
       // дополнительная обводка для элемента при фокусе, т.к. при навигации с клавиатуры фокус не видно
@@ -51,33 +53,28 @@
   }
 
   &:checked {
-    & ~ .label__span {
-      &::before {
-        border-color: @color-base-primary;
-      }
-      &::after {
-        background-color: @color-base-primary;
-      }
+    & ~ .label__span::before {
+      border-color: @color-base-primary;
     }
-    &:disabled {
-      & ~ .label__span {
-        &::after {
-          background-color: @color-light-gray;
-        }
-      }
+
+    & ~ .label__span::after {
+      background-color: @color-base-primary;
+    }
+
+    &:disabled ~ .label__span::after {
+      background-color: @color-light-gray;
     }
   }
 
-  &:disabled {
-    & ~ .label__span {
-      &::before {
-        border-color: @color-light-gray;
-      }
-      &::after {
-        background-color: inherit;
-      }
-      color: @color-light-gray;
+  &:disabled ~ .label__span {
+    &::before {
+      border-color: @color-light-gray;
     }
+
+    &::after {
+      background-color: inherit;
+    }
+    color: @color-light-gray;
   }
 }
 
@@ -94,6 +91,7 @@
       border-radius: 12px;
       background-color: @color-base-gray;
     }
+
     &::after {
       content: "";
       align-self: center;
@@ -109,13 +107,12 @@
 
   &:hover:not(:disabled),
   &:focus {
-    & ~ .label__span {
-      &::before {
-        border: 2px solid @color-primary-lighter;
-        background-color: @color-primary-opacity;
-      }
+    & ~ .label__span::before {
+      border: 2px solid @color-primary-lighter;
+      background-color: @color-primary-opacity;
     }
   }
+
   &:focus {
     & ~ .label__span {
       // дополнительная обводка для элемента при фокусе, т.к. при навигации с клавиатуры фокус не видно
@@ -124,34 +121,29 @@
   }
 
   &:checked {
-    & ~ .label__span {
-      &::before {
-        border: none;
-        background-color: @color-base-primary;
-      }
-      &::after {
-        justify-self: end;
-      }
+    & ~ .label__span::before {
+      border: none;
+      background-color: @color-base-primary;
     }
-    &:disabled {
-      & ~ .label__span {
-        &::after {
-          background-color: @color-base-gray;
-        }
-      }
+
+    & ~ .label__span::after {
+      justify-self: end;
+    }
+
+    &:disabled ~ .label__span::after {
+      background-color: @color-base-gray;
     }
   }
 
-  &:disabled {
-    & ~ .label__span {
-      &::before {
-        border-color: @color-light-gray;
-        background-color: @color-light-gray;
-      }
-      &::after {
-        background-color: @color-base-white;
-      }
-      color: @color-light-gray;
+  &:disabled ~ .label__span {
+    &::before {
+      border-color: @color-light-gray;
+      background-color: @color-light-gray;
     }
+
+    &::after {
+      background-color: @color-base-white;
+    }
+    color: @color-light-gray;
   }
 }

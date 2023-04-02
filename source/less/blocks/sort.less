@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   @media (min-width: @width-tablet) {
     justify-content: flex-end;
     gap: 11px;
   }
+
   @media (min-width: @width-desktop) {
     padding-top: 5px;
   }
@@ -28,6 +30,7 @@
 
 .sort__fieldset {
   display: none;
+
   &.active {
     background-color: @color-base-white;
     z-index: 2;
@@ -35,7 +38,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     overflow: hidden;
   }
@@ -57,6 +60,7 @@
   color: @color-base-primary;
   border-radius: 4px;
   min-width: max-content;
+
   &:hover,
   &:focus {
     background-color: @color-base-secondary;

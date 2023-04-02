@@ -6,7 +6,12 @@
   <title>Drink2Go</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <!-- стили leaflet подключены удаленно, т.к. в критериях не сказано о способе подключения, а также при локальном сохранении стилей библиотеки, линтер указывает на ошибки в файле, т.к. в стилях leaflet кодстайл отличается от используемого в проекте -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-medium.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-bold.woff" as="font">
 </head>
 
 <body class="body">
@@ -24,6 +29,11 @@
       </div>
 
       <div class="header__center">
+        <!--
+          - меню-бургер, по умолючанию скрыто классом no-js
+          - при инициализации класс no-js удаляется
+          - переключение состояние происходит при добавлении и удалении класса open
+        -->
         <nav class="header__navigation navigation no-js" id="main-navigation">
           <ul class="navigation__list list">
             <li class="navigation__item">
@@ -61,6 +71,11 @@
             </a>
           </li>
         </ul>
+        <!--
+          - кнопка открытия меню, по умолючанию скрыта классом no-js
+          - при инициализации класс no-js удаляется
+          - переключение состояние происходит при добавлении и удалении класса open
+        -->
         <button class="header__button no-js" type="button" id="main-navigation-button" data-target="#main-navigation">
           <span class="visually-hidden">Открыть меню навигации</span>
         </button>

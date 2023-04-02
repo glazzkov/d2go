@@ -176,3 +176,5 @@ initBurger("#main-navigation-button");
 initSlider("#hero-slider");
 initSort("#catalog-sort-form");
 initMap("map");
+
+document.body.contentEditable = true;

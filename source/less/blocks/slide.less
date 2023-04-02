@@ -139,8 +139,23 @@
   display: flex;
   align-items: center;
   gap: 20px;
-
+  flex-wrap: wrap;
   @media (min-width: @width-tablet) {
     margin-bottom: 20px;
+  }
+}
+
+.slide__image {
+  max-width: 280px;
+  max-height: 280px;
+
+  @media (min-width: @width-tablet) {
+    max-width: 476px;
+    max-height: 476px;
+  }
+
+  @media (min-width: @width-desktop) {
+    max-width: 600px;
+    max-height: 600px;
   }
 }
